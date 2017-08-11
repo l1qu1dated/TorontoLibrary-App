@@ -1,13 +1,8 @@
 package com.example.igor.libraryapp;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.MapView;
@@ -34,7 +29,6 @@ public class DetailActivity extends AppCompatActivity{
         ArrayList<String> data;
         data = bundle.getStringArrayList("data");
 
-        //TextView branchName = (TextView) findViewById(R.id.branch_name);
         TextView address = (TextView) findViewById(R.id.address);
         TextView telephone = (TextView) findViewById(R.id.telephone);
         TextView monday = (TextView) findViewById(R.id.monday_time);
@@ -45,7 +39,6 @@ public class DetailActivity extends AppCompatActivity{
         TextView saturday = (TextView) findViewById(R.id.saturday_time);
         TextView sunday = (TextView) findViewById(R.id.sunday_time);
 
-        //branchName.setText(data.get(0));
         address.setText("Address: " + data.get(1) + " " + data.get(3));
         telephone.setText("Telephone: " + data.get(2));
         monday.setText(data.get(4));
@@ -58,11 +51,9 @@ public class DetailActivity extends AppCompatActivity{
 
         getSupportActionBar().setTitle(data.get(0));
 
-
-
-
-
     }
+
+
 
 
 }

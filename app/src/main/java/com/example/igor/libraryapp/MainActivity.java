@@ -27,6 +27,8 @@ import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (res.getCount() == 0){ return; }
 
+        //set time for custom list adapter
         while(res.moveToNext()){
             String name = res.getString(1);
             int id = Integer.parseInt(res.getString(0));
             String hours = "";
-            //String hours = res.getString(day + 3);
             switch(day){
                 case GregorianCalendar.MONDAY:
                     hours = res.getString(5);
@@ -104,25 +106,7 @@ public class MainActivity extends AppCompatActivity {
             ids.add(id);
         }
 
-        //adapter = new ListAdapter(this, branches, branch_hours);
-        /*adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_2, android.R.id.text1,  branches){
-            @NonNull
-            @Override
-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-                Log.d("view2", "testing: " + branches.get(position)+ " " + branch_hours.get(position));
-
-                View view = super.getView(position, convertView, parent);
-
-                TextView text1 = (TextView)view.findViewById(android.R.id.text1);
-                text1.setText(branches.get(position));
-                text1.setTextSize(18);
-                text1.setTypeface(null, Typeface.BOLD);
-                //TextView text2 = (TextView)view.findViewById(android.R.id.text2);
-                //text2.setText(branch_hours.get(position));
-                return view;
-            }
-        };*/
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, branches);
         myList.setAdapter(adapter);
 

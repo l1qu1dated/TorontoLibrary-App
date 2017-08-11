@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * Created by Igor on 7/30/2017.
  */
-
+//custom list adapter, not used in this app yet
 public class ListAdapter extends ArrayAdapter{
     ArrayList<String> branches = new ArrayList<>();
     ArrayList<String> hours = new ArrayList<>();
